@@ -1,0 +1,47 @@
+
+
+%logistic 分岔图
+figure;
+set(0,'defaultfigurecolor','w');%设置背景颜色为白色??
+axis([3.7,4,0,1]);
+grid off
+hold on
+x=[];
+x(1)=0.345;
+
+for a=3.7:0.001:4
+    u=a;
+    for n=2:300 
+       x(n)=u*x(n-1)*(1-x(n-1));
+    end
+    for n=200:300
+      plot(a,x(n),'b','markersize',3);
+      % plot(a,x(n),'k');
+    end
+end
+
+xlabel('\fontsize{12}\itu'),
+ylabel('\fontsize{12}\itX(n)');
+% set(gca,'FontSize',20);%?设置文字大小，同时影响坐标轴标注、图例、标题等。
+
+
+%% 另外一种求分岔图的程序
+% clc 
+% clear 
+% close all 
+% 
+% lambda = 3:5e-4:4; 
+% x = 0.4*ones(1,length(lambda)); 
+% 
+% N1 = 400;                   % 前面的迭代点数 
+% N2 = 100;                   % 后面的迭代点数 
+% 
+% f = zeros(N1+N2,length(lambda)); 
+% for i = 1:N1+N2 
+%     x = lambda .* x .* (1 - x); 
+%     f(i,:) = x; 
+% end 
+% f = f(N1+1:end,:); 
+% plot(lambda,f,'k.','MarkerSize',1) 
+% xlabel('\lambda') 
+% ylabel('x')
