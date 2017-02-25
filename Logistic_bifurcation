@@ -45,3 +45,4 @@ ylabel('\fontsize{12}\itX(n)');
 % plot(lambda,f,'k.','MarkerSize',1) 
 % xlabel('\lambda') 
 % ylabel('x')
+%我进行了改变
